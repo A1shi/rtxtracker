@@ -69,7 +69,7 @@ function validatePrices() {
                 case 0:
                     _d.trys.push([0, 7, 8, 13]);
                     _b = __asyncValues(validPrices.map(function (e) {
-                        if (!$(e).parent().parent().parent().find('.item-info').find('.item-title').text().includes("MSI") && !$(e).parent().parent().parent().find('.item-info').find('.item-title').text().includes("Power Supply") && $(e).parent().parent().parent().find('.item-info').find('.item-promo')) {
+                        if (!$(e).parent().parent().parent().find('.item-info').find('.item-title').text().includes("MSI") && !$(e).parent().parent().parent().find('.item-info').find('.item-promo')) {
                             var url_1 = $(e).parent().parent().parent().find('.item-info').find('.item-title').attr('href');
                             return url_1;
                         }
@@ -79,7 +79,7 @@ function validatePrices() {
                 case 2:
                     if (!(_c = _d.sent(), !_c.done)) return [3 /*break*/, 6];
                     url = _c.value;
-                    if (!(counter < 2)) return [3 /*break*/, 4];
+                    if (!(counter < settings.maxAmount && url)) return [3 /*break*/, 4];
                     return [4 /*yield*/, openShit(url)];
                 case 3:
                     _d.sent();

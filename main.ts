@@ -20,12 +20,12 @@ axios.get("https://www.newegg.com/p/pl?d=rtx+3080&cm_sp=KeywordRelated-_-rtx+306
 async function validatePrices () {
 
   for await (const url of validPrices.map(e => {
-    if (!$(e).parent().parent().parent().find('.item-info').find('.item-title').text().includes("MSI") && $(e).parent().parent().parent().find('.item-info').find('.item-promo')) {
+    if (!$(e).parent().parent().parent().find('.item-info').find('.item-title').text().includes("MSI") && !$(e).parent().parent().parent().find('.item-info').find('.item-promo')) {
       let url = $(e).parent().parent().parent().find('.item-info').find('.item-title').attr('href')
       return url;
     }
   })) {
-    if (counter < 2) {
+    if (counter < settings.maxAmount && url) {
       await openShit(url);
     }
     counter++;
