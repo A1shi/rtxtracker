@@ -5,6 +5,8 @@ const openShit = require('open');
 let counter = 0;
 let validPrices: any[] = [];
 let $: any;
+
+setInterval(() => {
 axios.get("https://www.newegg.com/p/pl?d=rtx+3080&cm_sp=KeywordRelated-_-rtx+3060-_-rtx+3070-_-INFOCARD&N=100007709&isdeptsrh=1").then((response: any) => {
   $ = cheerio.load(response.data)
 
@@ -31,5 +33,7 @@ async function validatePrices () {
     counter++;
   }
 }
+}, 86400000)
+
 
 export { };
