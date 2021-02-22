@@ -1,0 +1,21 @@
+{
+  "name": "rtxtracker",
+  "version": "1.0.0",
+  "main": "main.ts",
+  "repository": "https://github.com/A1shi/rtxtracker.git",
+  "author": "A1shi <chxcolate@chxco.dev>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.5",
+    "open": "^7.4.2",
+    "typescript": "^4.1.5"
+  },
+  "scripts": {
+    "build": "tsc main.ts",
+    "start": "node main.js"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.31"
+  }
+}
