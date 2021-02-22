@@ -33,7 +33,7 @@ async function validatePrices () {
     counter++;
   }
 }
-}, 86400000)
+}, 60000)
 
 
 export { };
